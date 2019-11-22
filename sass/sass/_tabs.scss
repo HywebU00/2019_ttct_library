@@ -1,0 +1,110 @@
+.tabSet {
+    max-width: 100%;
+    margin: 1em auto;
+    padding:5px 0;
+    overflow: hidden;
+    @extend %clearfix;
+    @include screen('mobile') {
+        width: auto;
+        height: auto !important;
+    }
+}
+.tabs {
+    position: relative;
+    &>.tabItem {
+        float: left;
+        padding: 0;
+        font-size:1em;
+        line-height: 1;
+        font-weight: normal;
+        margin:0;
+        &.active>a {
+            background: $primaryColor;
+            color:#fff;
+        }
+
+
+        @include screen('mobile') {
+            float: none;
+            &>a {
+                width: 100% !important;
+                border-bottom: none;
+            }
+            &.active>a {
+                background: $primaryColor;
+                color: #fff;
+            }
+        }
+        &>a {
+            display: block;
+            padding: .5em 0;
+            text-align: center;
+            background-color: #fff;
+            color: darken($primaryColor, 10);
+            text-decoration: none;
+            position: relative;
+            border-radius:30px;
+            border: 2px solid $primaryColor;
+            transition: all .3s;
+            @include text-overflow;
+            @include box-sizing;
+            @include screen('mobile'){
+                margin-bottom: .3em;
+
+            }
+            &:hover {
+                background: $primaryColor;
+                color:#fff;
+            }
+        }
+    }
+}
+//多組 可設定差異
+.example-2 {
+    .tabItem>a:hover {
+        background: $secondaryColor;
+    }
+    .tabItem.active>a {
+        background: $secondaryColor;
+    }
+}
+// 顯示content
+.active+.tabContent {
+    display: block;
+}
+.tabContent {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    clear: both;
+    padding: 30px 20px;
+    display: none;
+    @include screen('mobile') {
+        position: static;
+    }
+    ul {
+        @include li-reset;
+    }
+    li {
+        margin: 0;
+        padding: .6em 0;
+        line-height: 1.6;
+        border-bottom: 1px #eee solid;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @include screen('mobile') {
+            @include text-overflow();
+        }
+        a {
+            @include aSetting_nocolor;
+        }
+        time {
+            display: inline-block;
+            margin: 0 1em;
+            font-size: .813em;
+            color: $primaryColor;
+        }
+    }
+}

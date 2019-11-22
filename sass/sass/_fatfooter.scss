@@ -1,0 +1,194 @@
+.fatfooter {
+    @include make-fatfooter($fatfooter-length, 100%);
+    @extend %clearfix;
+    //overflow: hidden;
+    padding-bottom: 1em;
+    margin: 0 auto;
+    background: $fatfooterBgColor;
+    position: relative;
+    z-index: 50;
+    //   @include screen('mobile') {
+    //     display: none;
+    // }
+    .container {
+        //overflow: hidden;
+        @include box-sizing;
+        @include gutter;
+    }
+    // 按鈕
+    .btn-fatfooter {
+        font-size: .813em;
+        display: block;
+        width: 118px;
+        height: 36px;
+        color: #FFF;
+        border: none;
+        background: url(../images/footer_btn.png) no-repeat;
+        background-size: 100%;
+        position: absolute;
+        left: 50%;
+        top:-38px;
+        margin-left: -59px;
+        z-index: 90;
+        padding-top: 40px;
+        //text-indent: -9999px;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #FFF;
+            border-left: none;
+            border-bottom: none;
+            transform: rotate(-45deg);
+            left: 50%;
+            top: 18px;
+            margin-left: -6px;
+            transition: .3s ease-out;
+            z-index: 20;
+        }
+        // &:after{
+        //     content:"";
+        //     position: absolute;
+        //     background:$fatfooterBgColor;
+        //     background-size:100%;
+        //     width: 140px;
+        //     height: 40px;
+        //     left: 50%;
+        //     top: -9px;
+        //     z-index: 10;
+        //     margin-left: -68px;
+        // }
+        &:hover,
+        &:focus {
+            //background: darken($aHover, 10);
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+        &.close {
+            &:before {
+                transform: rotate(135deg) !important;
+                top: 10px;
+            }
+        }
+    }
+    nav {
+        overflow: hidden;
+        display: block;
+        position: relative;
+        padding: 3em 0 0 2em;
+        @include box-sizing;
+        @include screen('mobile') {
+            padding: 1em 0;
+        }
+        ul {
+            @include li-reset;
+            @include screen('mobile') {
+                width: 100%;
+                display: block;
+                margin: 0px auto;
+            }
+            li {
+                display: inline-block;
+                text-align: left;
+                vertical-align: top;
+                margin: 0 -5px 1em 0;
+                width: 16.666%;
+                @include box-sizing;
+                @include screen('tablet') {
+                    width: 20%;
+                }
+                @include screen('mobile') {
+                    display: block;
+                    margin:0 0 .4em;
+                    width: 100%;
+                }
+                a {
+                    line-height: 1.5;
+                    display: block;
+                    font-weight: bold;
+                    padding: .5em 0px;
+                    color:#fff;
+                    @include box-sizing;
+                    &:hover{
+                        text-shadow: 0 1px 1px rgba(#000, .3);
+                    }
+                    &:focus{
+                        box-shadow: 0 0px 0px 1px $secondaryColor inset;
+                    }
+                }
+                ul {
+                    margin-top: 5px;
+                    @include screen('mobile') {
+                        width: auto;
+                    }
+                    li {
+                        display: block;
+                        margin: 0;
+                        border: none;
+                        background: none;
+                        width: 100%;
+                        @include screen('mobile') {
+                            display:inline-block;
+                            width:auto;
+                        }
+                        a {
+                            display: block;
+                            //@include aSetting_nocolor;
+                            color: #fff;
+                            text-decoration: none;
+                            opacity:.9;
+                            font-weight: normal;
+                            text-align: left;
+                            font-size: .875em;
+                            line-height: 1.5em;
+                            padding: .5em 1em .5em 0;
+                            background: none;
+                            @include screen('mobile') {
+                                padding:.3em .2em;
+                            }
+                        }
+                    }
+                    //第三層關閉
+                    ul {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    &:before{
+        content:"";
+        position: absolute;
+        right: 83%;
+        bottom:-120px;
+        z-index: 60;
+        width: 300px;
+        height:200px;
+        background:url(../images/footer_canoe.png) no-repeat;
+        background-size: contain;
+        @include screen('notebook'){
+            display:none;
+        }
+    }
+    &:after{
+        content:"";
+        position: absolute;
+        left: 85%;
+        bottom:-90px;
+        z-index: 60;
+        width: 220px;
+        height:100px;
+        background:url(../images/footer_water.png) no-repeat;
+        background-size: contain;
+        @include screen('notebook'){
+            display:none;
+        }
+    }
+}
