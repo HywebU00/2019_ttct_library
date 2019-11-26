@@ -154,7 +154,7 @@ body {
     }
 
     a {
-        color: $primaryColor;
+        color: darken($primaryColor, 10);
         vertical-align:middle;
     }
 

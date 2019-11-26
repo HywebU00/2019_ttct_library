@@ -559,7 +559,7 @@ section {
             }
         }
         .activity_location{
-            color: $importantColor;
+            color: darken($primaryColor, 10);
             font-size: .938em;
             &:before{
                 content: "";
@@ -573,7 +573,7 @@ section {
                 vertical-align: middle;
             }
             &:hover{
-                color: darken($importantColor, 10);
+                color: darken($primaryColor, 15);
             }
         }
     }
@@ -806,6 +806,11 @@ section {
     .pignose-calendar-header{
         margin-top: 1em;
         padding:0 1em;
+        .pignose-calendar-week{
+            &.pignose-calendar-week-sat, &.pignose-calendar-week-sun{
+                color:$primaryColor;
+            }
+        }
     }
     .pignose-calendar-body{
         padding: 1em;
