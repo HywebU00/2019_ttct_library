@@ -7,6 +7,21 @@ $btn-radius:.31em;
 .btn_grp {
     text-align: center;
     padding: 1em 0;
+    .back, .next{
+        min-width: 120px;
+        padding:.65em 1.5em;
+        margin-bottom: 1em;
+        border:0;
+    }
+    .back{
+        background:darken($color-gray, 10);
+        &:hover{
+            background:darken($color-gray, 20);
+        }
+    }
+    .next{
+        background:$primaryColor;
+    }
 }
 
 // 按鈕的共用設定
@@ -100,7 +115,20 @@ $btn-radius:.31em;
     color:lighten($color-word,15);
 }
 .btn-primary {
-    @extend .btn-orange;
+    @extend %btn;
+    @include btn_setting($primaryColor, #FFF);
+    &:hover,
+    &:focus{
+        background:darken($primaryColor, 10);
+    }
+}
+.btn-secondary {
+    @extend %btn;
+    @include btn_setting($secondaryColor, #000);
+    &:hover,
+    &:focus{
+        background:darken($secondaryColor, 10);
+    }
 }
 // 按鈕大小
 .btn-xl {

@@ -10,6 +10,11 @@ h3.title{
     margin: 1em 0;
 }
 .cp {
+    ol{
+        ul{
+            list-style:none;
+        }
+    }
     .pic {
         float: left;
         margin: 0px 1em 1em 0;
@@ -80,9 +85,108 @@ h3.title{
             @include li-reset;
         }
     }
+    .info_list{
+        @include make-xs-column(12);
+        @include make-sm-column(8);
+        @include make-md-column(9);
+        @include make-lg-column(9);
+        @include gutter();
+        padding-top: 1em;
+        padding-bottom: 1em;
+        ul{
+            list-style:none;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            padding:.5em 0;
+        }
+        .time, .location{
+            position: relative;
+            padding-left: 2em;
+            &:before{
+                content:"";
+                position: absolute;
+                left: 0;
+                top:10px;
+                width: 25px;
+                height:25px;
+                background: url(../images/icons_library_info.png) no-repeat;
+                background-size:100%;
+            }
+        }
+        .time{
+            &:before{
+                background-position:0 -75px;
+            }
+        }
+        .location{
+            &:before{
+                background-position:0 0;
+            }
+        }
+    }
+    .registration{
+        @include make-xs-column(12);
+        @include make-sm-column(4);
+        @include make-md-column(3);
+        @include make-lg-column(3);
+        @include gutter();
+        padding-top:1em;
+        padding-bottom: 1em;
+        .btn{
+            padding:.65em 3em;
+            transition: all .3s;
+            background:$primaryColor;
+            color:#fff;
+            &:hover, &:focus{
+                background:$secondaryColor;
+                color:#000;
+                box-shadow: 0 0px 0px 2px $secondaryColor inset;
+            }
+        }
+        .amount{
+            list-style:none;
+            padding:.5em 0;
+            .num{
+                font-weight: bold;
+                color:$primaryColor;
+            }
+        }
+    }
+    .activity_content{
+        clear:both;
+        &:after{
+            content:"";
+            display:block;
+            clear:both;
+        }
+    }
+    .list_title{
+        font-weight: bold;
+    }
+    .agree_grp{
+        text-align: center;
+    }
+    .back, .next{
+        min-width: 120px;
+        padding:.65em 1.5em;
+        margin-bottom: 1em;
+        border:0;
+    }
+    .back{
+        background:darken($color-gray, 10);
+        &:hover{
+            background:darken($color-gray, 20);
+        }
+    }
+    .next{
+        background:$primaryColor;
+    }
 }
 .share{
-    float: right;
+    //float: right;
+    text-align: right;
     margin:1em 0;
     @include screen('mobile'){
         float: none;
@@ -127,6 +231,60 @@ div.tag {
         }
     }
 }
+.apply_form {
+    width: 80%;
+    margin: 0 auto;
+    @include screen('mobile'){
+        width:100%;
+    }
+    input{
+        border:1px solid #ccc;
+        background:#fff;
+    }
+    select{
+        width:auto;
+        min-width: 100px;
+    }
+}
+.apply_result{
+    td{
+        text-align: center;
+    }
+    .name{
+        text-align: left;
+    }
+}
+.participant{
+    clear:both;
+    //border:1px solid $color-gray;
+    background-color: #fff;
+    padding:.5em 2em;
+    ul{
+        list-style:none;
+        padding-left: 0;
+    }
+    li{
+        border-bottom: 1px dashed #DDD;
+        padding:1em 0;
+    }
+    .result_title{
+        display:inline-block;
+        min-width: 150px;
+        @include screen('xs_mobile'){
+            &:after{
+                content:"：";
+            }
+        }
+    }
+    .result_content{
+        display:inline-block;
+        color:darken($primaryColor, 10);
+        @include screen('xs_mobile'){
+            display:block;
+        }
+    }
+}
+
 // 檔案下載
 .file_download {
     width: 100%;
@@ -138,7 +296,7 @@ div.tag {
         margin: 0.5em 0px 0.2em;
         border-bottom: 1px solid $primaryColor;
     }
-    ul {
+    ul, ol {
         counter-reset: counter;
         list-style-type: none;
         padding: 0;
@@ -436,5 +594,29 @@ div.tag {
             width: 100%;
             display: block;
         }
+    }
+}
+.questionnaire{
+    h3{
+        background:$primaryColor;
+        color:#fff;
+        text-align: center;
+        padding:.5em;
+    }
+    .form_grid{
+        border-top: 0;
+    }
+    .form_title{
+        float: none;
+        width: 100%;
+    }
+    .form_content{
+        float: none;
+        width: 100%;
+        margin-left: 1em;
+    }
+    input[type="text"]{
+        width: auto;
+        margin: 0 .5em;
     }
 }

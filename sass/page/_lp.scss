@@ -24,6 +24,20 @@
             }
         }
     }
+    .questionnaire{
+        td{
+            text-align: center;
+        }
+        .btn{
+            color:#fff;
+            &.btn-secondary{
+                color:#000;
+            }
+        }
+        .name{
+            text-align: left;
+        }
+    }
 
     .list {
         &>ul,
@@ -301,6 +315,11 @@
         }
     }
 }
+.lost_list{
+    tbody{
+        background-color: #fff;
+    }
+}
 //活動列表頁
 .activities_list{
     ul{
@@ -384,7 +403,7 @@
                 color: $color-word;
                 text-align: center;
                 &.register{
-                   color: $secondaryColor;
+                   color: $primaryColor;
                 }
                 &.full{
                     color: lighten($color-word, 10);
@@ -414,5 +433,15 @@
         .highcharts-credits{
             display:none;
         }
+    }
+}
+.chart_grp{
+    margin-bottom: 2em;
+    border-bottom: 1px solid #DDD;
+    .chart_container{
+        max-width:1100px;
+        min-width: 310px;
+        height:400px;
+        margin:0 auto;
     }
 }
