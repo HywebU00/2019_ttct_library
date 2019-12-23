@@ -11,6 +11,7 @@ section {
 .bg{
     background: #faf7ef;
 }
+
 .mp{
     background-position: center bottom 100px;
     >section{
@@ -28,6 +29,42 @@ section {
             @include screen('mobile'){
                 padding:1em;
                 margin-bottom: 0;
+            }
+        }
+        &.bg-1{
+            position:relative;
+            padding-top: 7em;
+            z-index:0;
+            &:after{
+                content:"";
+                position: absolute;
+                top:7em;
+                left:0;
+                width: 100%;
+                height:540px;
+                background:darken($lightColor, .5);
+                transform-origin:center;
+                transform:skewY(10deg);
+                z-index: -1;
+                @include screen('tablet'){
+                    height: 380px;
+
+                }
+                @include screen('tablet'){
+                    height: 420px;
+
+                }
+            }
+            h2{
+                &:after{
+                    content: "";
+                    position: absolute;
+                    width: 180px;
+                    height: 2px;
+                    transform: rotate(-45deg);
+                    left: calc(50% - 240px);
+                    bottom: 2em;
+                }
             }
         }
     }
@@ -695,37 +732,36 @@ section {
 .book_display{
     position: relative;
     z-index: 1;
-    &:nth-child(odd){
-        h2{
-            &:after{
-                transform: rotate(45deg);
-                right: calc(50% - 260px);
-            }
-        }
-    }
-    &:nth-child(even){
-        &:after{
-            content:"";
-            position: absolute;
-            top:7em;
-            left:0;
-            width: 100%;
-            height:540px;
-            background:darken($lightColor, .5);
-            transform-origin:center;
-            transform:skewY(10deg);
-            z-index: -1;
-            @include screen('tablet'){
-                height: 380px;
+    // &:nth-child(odd){
+    //     h2{
+    //         &:after{
+    //             transform: rotate(45deg);
+    //             right: calc(50% - 260px);
+    //         }
+    //     }
+    // }
+    // &:nth-child(even){
+    //     &:after{
+    //         content:"";
+    //         position: absolute;
+    //         top:7em;
+    //         left:0;
+    //         width: 100%;
+    //         height:540px;
+    //         background:darken($lightColor, .5);
+    //         transform-origin:center;
+    //         transform:skewY(10deg);
+    //         z-index: -1;
+    //         @include screen('tablet'){
+    //             height: 380px;
 
-            }
-            @include screen('tablet'){
-                height: 420px;
+    //         }
+    //         @include screen('tablet'){
+    //             height: 420px;
 
-            }
-        }
-    }
-
+    //         }
+    //     }
+    // }
     h2{
         text-align: center;
         position: relative;
@@ -735,8 +771,8 @@ section {
             position: absolute;
             width: 180px;
             height: 2px;
-            transform: rotate(-45deg);
-            left: calc(50% - 140px);
+            transform: rotate(45deg);
+            right: calc(50% - 150px);
             bottom:2em;
         }
     }
