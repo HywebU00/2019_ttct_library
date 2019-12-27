@@ -40,6 +40,9 @@
     }
 
     .list {
+        h3{
+            margin-top: 0;
+        }
         &>ul,
         ol {
             list-style-type: none;
