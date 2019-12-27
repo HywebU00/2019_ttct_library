@@ -162,7 +162,16 @@
                 }
             }
         }
+        &.epaper{
+            time{
+                @include screen("mobile") {
+                    padding-left: 0;
+                }
+            }
+        }
     }
+
+
 
     .library_select {
         button,
