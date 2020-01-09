@@ -1,4 +1,5 @@
 .lp {
+    position:relative;
     table {
         td {
             a {
@@ -455,5 +456,59 @@
         min-width: 310px;
         height:400px;
         margin:0 auto;
+    }
+}
+
+.subscribe_btn{
+    position:absolute;
+    top:0;
+    right:0;
+    padding: .5em .8em;
+    margin:0;
+    @include screen("mobile"){
+        position:static;
+    }
+    &:hover{
+        background-color:$aHover;
+    }
+}
+.unsubscribe_btn{
+    background-color:darken($buttonColor, 20);
+    padding: .5em .8em;
+    &:hover{
+        background-color:darken($buttonColor, 30);
+        box-shadow: none;
+    }
+}
+
+
+.epaper{
+    .header{
+        &:before{
+            display:none;
+        }
+        h1{
+            padding:.5em 0;
+        }
+        .btn_grp{
+            text-align: right;
+        }
+        .subscribe_btn{
+            position:static;
+        }
+    }
+    .accesskey{
+        color:#fff;
+        left:0;
+    }
+    .epaper_title{
+        color:$primaryColor;
+        font-size: 1.125em;
+        font-weight: bold;
+    }
+    footer{
+        .accesskey{
+            color:$primaryColor;
+        }
     }
 }
