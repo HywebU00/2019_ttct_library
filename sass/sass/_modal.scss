@@ -54,3 +54,17 @@
     background: RGBA(0, 0, 0, .5);
     z-index: 99999998;
 }
+.modal_subscribe{
+    text-align: center;
+    padding-top:3em;
+    top:10%;
+    height:auto;
+    .form_grp.form_inline{
+        input[type="email"]{
+            min-width:220px;
+        }
+    }
+    .unsubscribe{
+        background-color:#888;
+    }
+}

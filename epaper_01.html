@@ -135,7 +135,21 @@
                                 <option>2009</option>
                             </select>
                         </div>
-                        <button class="subscribe_btn">電子報訂閱</button>
+                        <button type="button" id="openModal" class="subscribe_btn" >電子報訂閱</button>
+                        <!--彈出視窗-->
+                        <div id="modal1" class="modal modal_subscribe">
+                            <button type="button" class="close">關閉</button>
+                            <form action="">
+                                <div class="form_grp form_inline">
+                                    <label for="username">E-mail:</label>
+                                    <input name="username" type="email" placeholder="請輸入e-mail">
+                                </div>
+                                <div class="btn_grp">
+                                    <input name="" type="button" value="訂閱電子報">
+                                    <input name="" type="button" class="unsubscribe" value="取消電子報">
+                                </div>
+                            </form>
+                        </div>
                         <!-- 文字列表 -->
                         <div class="list">
                             <ul>
