@@ -35,9 +35,9 @@
     @include gutter(0);
     .img-container {
         @include aspect-ratio(10, 3.5); //PC版比例
-        @include screen('mobile') {
-             @include aspect-ratio(5, 2);
-        }
+        // @include screen('mobile') {
+        //      @include aspect-ratio(10, 3.5);
+        // }
     }
     .slick-prev, .slick-next{
         background-color:rgba($primaryColor, .8);
